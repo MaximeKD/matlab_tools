@@ -7,7 +7,7 @@
 % OUTPUTS:
 % - delay_sample: estimated delay between 2 signals in sample
 
-function diff_channel = compareFiles(filepath1, filepath2, channelfile1, channelfile2, fig)
+function diff_channel = compareFiles(filepath1, filepath2, channelfile1, channelfile2, fig, freqResp)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                    Function allowing to apply delay                     %
@@ -35,6 +35,14 @@ if nargin < 5 || isempty(fig)
 else
     if ischar(fig)
         fig = str2num(fig);
+    end 
+end
+
+if nargin < 6 || isempty(freqResp)
+    freqResp = 0;
+else
+    if ischar(freqResp)
+        freqResp = str2num(freqResp);
     end 
 end
 
@@ -136,4 +144,49 @@ if fig == 1
     xlabel('Time (s)');
 
     linkaxes([s1 s2], 'x');
+end
+
+
+%% Compute Frequency Responses
+if freqResp == 1
+    [spectrum_audio1_v,freq_v] = f_spectrum_farina(...
+        audio1_channel,...
+        audio_ref1,...
+        Fs);
+
+    [spectrum_audio2_v,freq_v] = f_spectrum_farina(...
+        audio2_channel,...
+        audio_ref2,...
+        Fs);
+
+    figure;
+
+    subplot(211);
+
+    semilogx(freq_v, db(spectrum_audio1_v));
+    hold on;
+    semilogx(freq_v, db(spectrum_audio2_v));
+    
+    grid minor;
+    title('Frequency Response','fontsize',14);
+    ylabel('Amplitude (dB)','fontsize',14);
+    legend('Audio 1', 'Audio 2');
+    %ylim([-80 20]);
+    xlim([10 20000]);
+    set(gca,'fontsize',14);
+    grid on;
+
+    subplot(212);
+
+    semilogx(freq_v, db(spectrum_audio1_v) - db(spectrum_audio2_v));
+    hold on;
+
+    grid minor;
+    ylabel('Diff (dB)','fontsize',14);
+    xlabel('Frequency (Hz)','fontsize',14);
+    legend('Diff Frequency Response');
+    xlim([10 20000]);
+    ylim([-3 3]);
+    set(gca,'fontsize',14);
+    grid on;
 end

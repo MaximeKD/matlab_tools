@@ -73,7 +73,7 @@ N_ref = min([length(audio1_m(:,channel1_ref)) ...
          length(audio2_m(:,channel2_ref))]);
 
 audio_ref1 = audio1_m(1:N_ref,channel1_ref);
-audio_ref2 = audio2_m(1:N_ref,channel2_ref);
+audio_ref2 = audio_ref1; %audio2_m(1:N_ref,channel2_ref); Ref channel is in file 1 only
 
 audio1_channel = audio1_m(1:N_ref,channelfile1);
 audio2_channel = audio2_m(1:N_ref,channelfile2);
