@@ -8,14 +8,14 @@ Path = '/Users/maximekolly/Documents/Devialet/Licencing/Projects/Pony/Validation
 
 %% sha1 commit
 sha1_ref = '2d7203783124480d4261a6958896c9c99cfb28f1';
-sha1_new = '74d80b1dad574199369364b254202b5be3601a17';
+sha1_new = 'c574d4338886a2e834d3fcb7db57ce84be18d601';
 
 %% Compare preset 6dB Sweep
 %% Preset validated
-% presetRef = 31;presetNew = 21; % OK
-% presetRef = 32; presetNew = 22;  % OK
+%presetRef = 31;presetNew = 21; % OK
+%presetRef = 32; presetNew = 22;  % OK
 % presetRef = 33; presetNew = 23;  % OK
-% presetRef = 34; presetNew = 24; % OK
+% presetRef = 34; presetNew = 24; % % OK
 % presetRef = 35; presetNew = 25; % OK
 presetRef = 36; presetNew = 26; % OK
 

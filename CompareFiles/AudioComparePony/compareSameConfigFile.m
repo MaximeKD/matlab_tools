@@ -36,6 +36,10 @@ Path = '/Users/maximekolly/Documents/Devialet/Licencing/Projects/Pony/Validation
 %file2 = 'P23_m12dB_74d80b1dad574199369364b254202b5be3601a17.wav';
 % OK
 
+%% Compare -12dB Sweep New branch copy dual 
+file2 = 'Ref_P31_Sin15kHz_6dB_2021-03-25-105228.wav';
+file1 = 'New_P21_Sin15kHz_6dB_2021-03-25-105022.wav';
+
 filename_dualPod = strcat(Path,'/',file1);
 filename_dualL = strcat(Path,'/',file2);
 
