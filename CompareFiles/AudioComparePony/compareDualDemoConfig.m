@@ -10,16 +10,19 @@ Path = '/Users/maximekolly/Documents/Devialet/Licencing/Projects/Pony/Validation
 sha1_ref = 'c574d4338886a2e834d3fcb7db57ce84be18d601';
 sha1_new = 'c574d4338886a2e834d3fcb7db57ce84be18d601';
 
-
+    
 
 %% Compare preset 6dB Sweep
 %% Preset validated
+%presetDualPod = 11;presetDualL = 1; volume = '_6dB_AVL_'; %
 % presetDualPod = 11;presetDualL = 1; volume = '_6dB_'; % OK
 % presetDualPod = 12;presetDualL = 2; volume = '_6dB_'; % OK
 % presetDualPod = 13;presetDualL = 3; volume = '_6dB_'; % OK
 % presetDualPod = 14;presetDualL = 4; volume = '_6dB_'; % OK
+% presetDualPod = 14;presetDualL = 4; volume = '_6dB_AVL_'; % OK
 % presetDualPod = 15;presetDualL = 5; volume = '_6dB_'; % OK
-presetDualPod = 16;presetDualL = 6; volume = '_6dB_'; % OK
+% presetDualPod = 15;presetDualL = 5; volume = '_6dB_AVL_'; % OK
+%presetDualPod = 16;presetDualL = 6; volume = '_6dB_'; % OK
 
 
 %% Process compare
