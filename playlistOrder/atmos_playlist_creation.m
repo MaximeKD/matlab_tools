@@ -13,7 +13,7 @@ for k=1:length(fileList)
     [path,name,ext] = fileparts(fullFilePath);
     
     splitID = strsplit(name,'-');
-    fileName = strcat(name(5:end),ext);
+    fileName = strcat(name(6:end),ext);
  
     outputFullFileName = fullfile(outputFolder, fileName);
     
